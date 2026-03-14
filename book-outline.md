@@ -11,4 +11,14 @@ mizahi, satirik ve analitik bir dille inceler.
 4. Toplantı Savunma Sanatı
 5. E-posta Judo
 6. Sorumluluktan Sıyrılma Teknikleri
-7. Sonuç
+7. Ofis kataları
+8. Sonuç
+
+
+## KİTABIN DİLİ
+
+- Argo + kurumsal karışımı
+- Gerçek diyaloglar
+- Mail örnekleri
+- “Bunu sakın yazma” uyarıları
+- Okurken “lan bu birebir ben” dedirten tarz

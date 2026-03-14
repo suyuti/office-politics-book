@@ -5,3 +5,4 @@
 - görünür olmak
 - sahiplenmek
 - değerlendirmek üzere not etmek
+
