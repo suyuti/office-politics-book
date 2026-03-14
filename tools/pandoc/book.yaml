@@ -1,0 +1,33 @@
+from: markdown
+to: pdf
+
+standalone: true
+table-of-contents: true
+number-sections: true
+top-level-division: chapter
+
+metadata:
+  title: "Kurumsal Hayatta Kalma Teknikleri"
+  subtitle: "Ofis Politikaları, Kurumsal Kung-Fu ve Beyaz Yaka Savunma Sanatları"
+  author: "Mehmet Suyuti Dindar"
+  lang: "tr-TR"
+
+pdf-engine: xelatex
+
+variables:
+  geometry:
+    - margin=2.5cm
+  fontsize: 11pt
+  documentclass: book
+  classoption:
+    - oneside
+
+include-in-header:
+  - tools/pandoc/preamble.tex
+
+resource-path:
+  - .
+  - figures
+  - chapters
+
+output-file: build/pdf/book.pdf

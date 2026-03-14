@@ -1,0 +1,44 @@
+name: Build Book PDF
+
+on:
+  push:
+    branches:
+      - main
+      - draft
+  workflow_dispatch:
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-xetex \
+            texlive-latex-extra \
+            texlive-fonts-recommended
+
+      - name: Create build directories
+        run: |
+          mkdir -p build/merged
+          mkdir -p build/pdf
+
+      - name: Merge chapters
+        run: bash tools/scripts/merge-chapters.sh
+
+      - name: Build PDF
+        run: bash tools/scripts/build-book.sh
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: office-politics-book-pdf
+          path: build/pdf/book.pdf
