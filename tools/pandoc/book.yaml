@@ -1,4 +1,4 @@
-from: markdown
+from: markdown+smart
 to: pdf
 
 standalone: true
@@ -23,7 +23,8 @@ variables:
     - inner=2.0cm
     - outer=1.6cm
   mainfont: Montserrat
-  fontsize: 11pt
+  monofont: DejaVu Sans Mono
+  fontsize: 12pt
   documentclass: book
   classoption:
     - oneside
