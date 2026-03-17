@@ -26,6 +26,11 @@ jobs:
             texlive-latex-extra \
             texlive-fonts-recommended
 
+      - name: Install Montserrat font
+        run: |
+          sudo apt-get install -y fonts-montserrat
+          fc-cache -fv
+
       - name: Create build directories
         run: |
           mkdir -p build/merged
