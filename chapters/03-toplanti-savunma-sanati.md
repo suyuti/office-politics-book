@@ -1,3 +1,5 @@
+![Açıklama metni](figures/manga/image_1.png){width=80%}
+
 # Bölüm 03 – Toplantı Savunma Sanatı
 
 Toplantı, modern ofisin en yoğun törensel alanıdır. Burada söz almak kadar
