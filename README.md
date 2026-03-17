@@ -27,6 +27,33 @@ make pdf
 - `build/` → üretilen çıktılar
 - `.github/workflows/` → otomatik PDF üretim pipeline’ı
 
+## Görseller / Resimler
+
+Kitaba görsel eklemek için şu adımları izle:
+
+1. Görsel dosyasını (`.png`, `.jpg`, `.pdf`, `.svg`) uygun alt klasöre koy:
+   - `figures/manga/` → manga / çizgi roman görselleri
+   - `figures/cartoons/` → karikatürler ve çizimler
+   - `figures/diagrams/` → şema ve diyagramlar
+   - `figures/covers/` → kapak ve bölüm başlığı görselleri
+
+2. İlgili bölüm dosyasında (`chapters/*.md`) aşağıdaki pandoc markdown sözdizimini kullan:
+
+   ```markdown
+   ![Açıklama metni](figures/manga/image_1.png){width=80%}
+   ```
+
+   Kısa yol olarak yalnızca dosya adı da yazılabilir — build sistemi
+   `figures/` altındaki tüm alt klasörleri otomatik arar:
+
+   ```markdown
+   ![Açıklama metni](image_1.png){width=80%}
+   ```
+
+3. `make pdf` ile PDF'i yeniden üret.
+
+Daha fazla örnek ve açıklama için `templates/figure-template.md` dosyasına bakabilirsin.
+
 ## Önerilen yazım akışı
 
 1. Yeni fikirleri önce `notes/` içine ekle.
