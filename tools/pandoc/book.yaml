@@ -16,7 +16,13 @@ pdf-engine: xelatex
 
 variables:
   geometry:
-    - margin=2.5cm
+    - paperwidth=13.5cm
+    - paperheight=21cm
+    - top=1.8cm
+    - bottom=1.8cm
+    - inner=2.0cm
+    - outer=1.6cm
+  mainfont: Montserrat
   fontsize: 11pt
   documentclass: book
   classoption:
