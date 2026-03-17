@@ -1,3 +1,5 @@
+![Açıklama metni](figures/manga/image_1.png){width=80%}
+
 # Bölüm 02 – Kurumsal Kung-Fu
 
 Kurumsal kung-fu, ofiste yumruk atmadan pozisyon kazanma sanatıdır.
