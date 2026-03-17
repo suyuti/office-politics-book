@@ -28,7 +28,11 @@ jobs:
 
       - name: Install Montserrat font
         run: |
-          sudo apt-get install -y fonts-montserrat
+          sudo mkdir -p /usr/local/share/fonts/truetype/montserrat
+          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf" \
+            -o "/usr/local/share/fonts/truetype/montserrat/Montserrat.ttf"
+          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat-Italic%5Bwght%5D.ttf" \
+            -o "/usr/local/share/fonts/truetype/montserrat/Montserrat-Italic.ttf"
           fc-cache -fv
 
       - name: Create build directories
