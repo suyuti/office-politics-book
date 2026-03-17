@@ -29,13 +29,13 @@ jobs:
       - name: Install Montserrat font
         run: |
           sudo mkdir -p /usr/local/share/fonts/truetype/montserrat
-          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/static/Montserrat-Regular.ttf" \
+          sudo curl -fsSL "https://raw.githubusercontent.com/JulietaUla/Montserrat/master/fonts/ttf/Montserrat-Regular.ttf" \
             -o "/usr/local/share/fonts/truetype/montserrat/Montserrat-Regular.ttf"
-          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/static/Montserrat-Bold.ttf" \
+          sudo curl -fsSL "https://raw.githubusercontent.com/JulietaUla/Montserrat/master/fonts/ttf/Montserrat-Bold.ttf" \
             -o "/usr/local/share/fonts/truetype/montserrat/Montserrat-Bold.ttf"
-          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/static/Montserrat-Italic.ttf" \
+          sudo curl -fsSL "https://raw.githubusercontent.com/JulietaUla/Montserrat/master/fonts/ttf/Montserrat-Italic.ttf" \
             -o "/usr/local/share/fonts/truetype/montserrat/Montserrat-Italic.ttf"
-          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/static/Montserrat-BoldItalic.ttf" \
+          sudo curl -fsSL "https://raw.githubusercontent.com/JulietaUla/Montserrat/master/fonts/ttf/Montserrat-BoldItalic.ttf" \
             -o "/usr/local/share/fonts/truetype/montserrat/Montserrat-BoldItalic.ttf"
           fc-cache -fv
 
