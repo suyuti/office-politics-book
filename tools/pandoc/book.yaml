@@ -22,7 +22,6 @@ variables:
     - bottom=1.8cm
     - inner=2.0cm
     - outer=1.6cm
-  mainfont: Montserrat
   monofont: DejaVu Sans Mono
   fontsize: 12pt
   documentclass: book

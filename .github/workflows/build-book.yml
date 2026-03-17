@@ -29,10 +29,14 @@ jobs:
       - name: Install Montserrat font
         run: |
           sudo mkdir -p /usr/local/share/fonts/truetype/montserrat
-          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf" \
-            -o "/usr/local/share/fonts/truetype/montserrat/Montserrat.ttf"
-          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat-Italic%5Bwght%5D.ttf" \
+          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/static/Montserrat-Regular.ttf" \
+            -o "/usr/local/share/fonts/truetype/montserrat/Montserrat-Regular.ttf"
+          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/static/Montserrat-Bold.ttf" \
+            -o "/usr/local/share/fonts/truetype/montserrat/Montserrat-Bold.ttf"
+          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/static/Montserrat-Italic.ttf" \
             -o "/usr/local/share/fonts/truetype/montserrat/Montserrat-Italic.ttf"
+          sudo curl -fsSL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/static/Montserrat-BoldItalic.ttf" \
+            -o "/usr/local/share/fonts/truetype/montserrat/Montserrat-BoldItalic.ttf"
           fc-cache -fv
 
       - name: Create build directories
