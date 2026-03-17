@@ -12,3 +12,4 @@ check:
 clean:
 	rm -rf build/merged/*
 	rm -rf build/pdf/*
+	rm -f output/*.pdf

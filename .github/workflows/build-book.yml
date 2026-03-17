@@ -10,6 +10,8 @@ on:
 jobs:
   build-pdf:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -43,6 +45,7 @@ jobs:
         run: |
           mkdir -p build/merged
           mkdir -p build/pdf
+          mkdir -p output
 
       - name: Merge chapters
         run: bash tools/scripts/merge-chapters.sh
@@ -50,8 +53,35 @@ jobs:
       - name: Build PDF
         run: bash tools/scripts/build-book.sh
 
+      - name: Determine versioned PDF filename
+        id: pdf_version
+        run: |
+          BUILD_DATE=$(date +%Y-%m-%d)
+          GIT_SHA=$(git rev-parse --short HEAD)
+          VERSION="${BUILD_DATE}-${GIT_SHA}"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "filename=book-${VERSION}.pdf" >> "$GITHUB_OUTPUT"
+
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
-          name: office-politics-book-pdf
-          path: build/pdf/book.pdf
+          name: office-politics-book-${{ steps.pdf_version.outputs.version }}
+          path: output/${{ steps.pdf_version.outputs.filename }}
+
+      - name: Prune old PDFs (keep latest 5)
+        run: |
+          cd output
+          ls -t book-*.pdf 2>/dev/null | tail -n +6 | xargs -r git rm -f --
+          cd ..
+
+      - name: Commit versioned PDF to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/
+          if git diff --cached --quiet; then
+            echo "No new PDF to commit."
+          else
+            git commit -m "build: add versioned PDF output/${{ steps.pdf_version.outputs.filename }}"
+            git push
+          fi
