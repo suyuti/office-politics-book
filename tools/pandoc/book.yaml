@@ -35,6 +35,10 @@ include-in-header:
 resource-path:
   - .
   - figures
+  - figures/covers
+  - figures/manga
+  - figures/cartoons
+  - figures/diagrams
   - chapters
 
 output-file: build/pdf/book.pdf
