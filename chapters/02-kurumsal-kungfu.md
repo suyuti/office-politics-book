@@ -1,4 +1,4 @@
-![Açıklama metni](figures/manga/image_1.png){width=80%}
+![](figures/manga/image_1.png){width=90%}
 
 # Bölüm 02 – Kurumsal Kung-Fu
 
